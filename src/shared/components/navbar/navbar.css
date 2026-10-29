@@ -16,7 +16,7 @@
   align-items: center;
   justify-content: space-between;
 
-  z-index: 9999;
+  z-index: 999;
 
   backdrop-filter: blur(20px);
 
@@ -52,43 +52,4 @@
 
 .nav-links a:hover {
   color: var(--accent);
-}
-
-.cart-btn {
-  width: 48px;
-  height: 48px;
-
-  border: none;
-
-  border-radius: 50%;
-
-  background: rgba(255,255,255,.08);
-
-  cursor: pointer;
-
-  color: white;
-
-  position: relative;
-}
-
-.cart-btn span {
-  position: absolute;
-
-  top: -4px;
-  right: -4px;
-
-  width: 20px;
-  height: 20px;
-
-  background: var(--accent);
-
-  color: #000;
-
-  font-size: .7rem;
-
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

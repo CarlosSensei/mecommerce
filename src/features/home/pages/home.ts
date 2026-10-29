@@ -113,5 +113,14 @@ export class HomeComponent implements AfterViewInit {
 
   }
 
+  goToSectionById(id: string): void {
+
+    this.homeScroll.goToSectionById(
+      this.wrapper.nativeElement,
+      id
+    );
+
+  }
+
 
 }

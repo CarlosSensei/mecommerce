@@ -1,0 +1,87 @@
+<div
+  class="cart-overlay"
+  [class.open]="cartService.isOpen()"
+  (click)="cartService.close()">
+
+  <aside
+    class="mini-cart"
+    [class.open]="cartService.isOpen()"
+    (click)="$event.stopPropagation()">
+
+    <div class="cart-header">
+
+      <h2>Cart</h2>
+
+      <button
+        class="close-btn"
+        (click)="cartService.close()">
+
+        ✕
+
+      </button>
+
+    </div>
+
+    <div class="cart-items">
+
+      @for (
+        item of cartService.cartItems();
+        track item.product.id
+      ) {
+
+        <div class="cart-item">
+
+          <img
+            [src]="item.product.image"
+            [alt]="item.product.name">
+
+          <div class="details">
+
+            <h4>{{ item.product.name }}</h4>
+
+            <p>{{ item.product.price }}€</p>
+
+            <div class="quantity">
+
+              <button type="button"
+                (click)="cartService.decrease(item.product.id)">
+                -
+              </button>
+
+              <span>
+                {{ item.quantity }}
+              </span>
+
+              <button type="button"
+                (click)="cartService.increase(item.product.id)">
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+    <div class="cart-footer">
+
+      <h3>
+        Total:
+        {{ cartService.totalPrice() }}€
+      </h3>
+
+      <button class="primary-btn checkout-btn">
+
+        Checkout
+
+      </button>
+
+    </div>
+
+  </aside>
+
+</div>

@@ -70,13 +70,10 @@
 }
 
 .hero-content {
-  opacity: .5;
+  opacity: 1;
   transition: opacity .8s ease;
 }
 
-.panel.active .hero-content {
-  opacity: 1;
-}
 
 /* ==========================
    GLOWS

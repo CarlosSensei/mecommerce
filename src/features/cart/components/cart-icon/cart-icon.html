@@ -1,0 +1,11 @@
+<button
+  class="cart-btn"
+  (click)="cartService.toggle()">
+
+  🛒
+
+  <span class="badge">
+    {{ cartService.totalItems() }}
+  </span>
+
+</button>
