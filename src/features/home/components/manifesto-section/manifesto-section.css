@@ -1,0 +1,59 @@
+:host {
+  display: block;
+  flex: 0 0 100vw;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+/* ==========================
+   MANIFESTO
+========================== */
+
+.manifesto {
+
+  width: 100vw;
+  height: 100vh;
+  
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.manifesto-content {
+  max-width: 1100px;
+}
+
+.manifesto p {
+  margin-bottom: 2rem;
+
+  color: var(--text-secondary);
+
+  font-size: 1.5rem;
+}
+
+.manifesto h2 {
+  font-size: clamp(5rem, 10vw, 10rem);
+  font-weight: 900;
+
+  line-height: 1;
+}
+
+.manifesto-content {
+  opacity: 1;
+  transition: opacity .8s ease;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 1024px) {
+
+  .manifesto {
+    padding-inline: 2rem;
+  }
+}

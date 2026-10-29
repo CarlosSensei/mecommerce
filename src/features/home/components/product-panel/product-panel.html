@@ -1,0 +1,51 @@
+<section
+class="panel product-panel"
+[style.--glow]="product.bgColor"
+[id]="'product-' + product.id">
+
+    <div class="product-content">
+
+        <div class="product-info">
+
+            <span>
+                NOVA COLLECTION
+            </span>
+
+            <h2>
+                {{ product.name }}
+            </h2>
+
+            <p>
+                {{ product.description }}
+            </p>
+
+            <div class="product-price">
+                {{ product.price }}€
+            </div>
+
+            <div class="product-actions">
+
+                <button class="primary-btn">
+                Discover
+                </button>
+
+                <button class="secondary-btn">
+                Details
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="product-image">
+
+            <img
+                [src]="product.image"
+                [alt]="product.name"
+                loading="lazy">
+
+        </div>
+
+    </div>
+
+</section>

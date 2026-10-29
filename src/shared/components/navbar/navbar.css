@@ -1,0 +1,94 @@
+.navbar {
+  position: fixed;
+
+  top: 1.5rem;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: min(1200px, 90%);
+
+  height: 72px;
+
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 9999;
+
+  backdrop-filter: blur(20px);
+
+  background:
+    color-mix(
+      in srgb,
+      var(--active-color) 8%,
+      rgba(0,0,0,.7)
+    );
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  border-radius: 999px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 900;
+
+  letter-spacing: .4rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.cart-btn {
+  width: 48px;
+  height: 48px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.08);
+
+  cursor: pointer;
+
+  color: white;
+
+  position: relative;
+}
+
+.cart-btn span {
+  position: absolute;
+
+  top: -4px;
+  right: -4px;
+
+  width: 20px;
+  height: 20px;
+
+  background: var(--accent);
+
+  color: #000;
+
+  font-size: .7rem;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

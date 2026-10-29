@@ -1,0 +1,26 @@
+<div class="scroll-wrapper" #wrapper>
+
+  <app-section-dots
+    [totalSections]="totalSections"
+    [activeSection]="activeSection"
+    (navigate)="goToSection($event)">
+  </app-section-dots>
+
+  <div class="horizontal-container">
+
+    <app-hero-section />
+
+    <app-manifesto-section />
+
+    @for (product of products; track product.id) {
+
+      <app-product-panel
+        [product]="product" />
+
+    }
+
+    <app-cta-section />
+
+  </div>
+
+</div>

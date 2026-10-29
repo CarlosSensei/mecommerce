@@ -1,0 +1,14 @@
+<div class="section-dots">
+
+  @for (dot of dots; track dot) {
+
+    <button
+      type="button"
+      class="dot"
+      [class.active]="activeSection === dot"
+      (click)="goTo(dot)">
+    </button>
+
+  }
+
+</div>

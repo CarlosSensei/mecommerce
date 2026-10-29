@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ==========================
+   HOST
+========================== */
+
+:host {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ==========================
+   HORIZONTAL SCROLL
+========================== */
+
+.scroll-wrapper {
+  position: relative;
+
+  overscroll-behavior: none;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+}
+
+.scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-container {
+  display: flex;
+
+  width: max-content;
+  height: 100vh;
+}
+
+.panel {
+  width: 100vw;
+  height: 100vh;
+
+  flex-shrink: 0;
+
+  position: relative;
+
+  scroll-snap-align: start;
+
+  overflow: hidden;
+}
+
+
+
+
+
+
