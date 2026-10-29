@@ -135,12 +135,12 @@
   color: white;
 
   border-color:
-    var(--active-color, var(--accent));
+    var(--accent);
 
   background:
     color-mix(
       in srgb,
-      var(--active-color, var(--accent)) 15%,
+      var(--accent) 15%,
       transparent
     );
 
@@ -148,7 +148,7 @@
     0 0 12px
       color-mix(
         in srgb,
-        var(--active-color, var(--accent)) 50%,
+        var(--accent) 50%,
         transparent
       );
 
@@ -167,7 +167,7 @@
     0 0 20px
       color-mix(
         in srgb,
-        var(--active-color, var(--accent)) 60%,
+        var(--accent) 60%,
         transparent
       );
 }
@@ -258,4 +258,90 @@
         var(--active-color, var(--accent)) 60%,
         transparent
       );
+}
+
+/* ==========================
+   THANKYOU MODAL
+========================== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, .7);
+  backdrop-filter: blur(20px);
+
+  z-index: 100000;
+}
+
+.thank-you-modal {
+  position: relative;
+
+  width: min(620px, 90vw);
+
+  padding: 3rem;
+
+  text-align: center;
+
+  border-radius: 32px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.03)
+    );
+
+  border: 1px solid rgba(255,255,255,.1);
+
+  backdrop-filter: blur(30px);
+
+  box-shadow:
+    0 0 40px rgba(0,0,0,.5),
+    0 0 80px
+      color-mix(
+        in srgb,
+        var(--active-color) 20%,
+        transparent
+      );
+
+  animation: modalIn .35s ease;
+}
+
+.icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.thank-you-modal h2 {
+  margin-bottom: 1rem;
+}
+
+.thank-you-modal p {
+  color: rgba(255,255,255,.75);
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

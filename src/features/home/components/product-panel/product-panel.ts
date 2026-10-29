@@ -22,4 +22,14 @@ export class ProductPanelComponent {
 
   }
 
+  showDetails = false;
+
+  openDetails(): void {
+    this.showDetails = true;
+  }
+
+  closeDetails(): void {
+    this.showDetails = false;
+  }
+
 }

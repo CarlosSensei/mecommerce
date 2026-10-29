@@ -74,7 +74,9 @@
         {{ cartService.totalPrice() }}€
       </h3>
 
-      <button class="primary-btn checkout-btn">
+      <button 
+        class="primary-btn checkout-btn"
+        (click)="checkout()">
 
         Checkout
 
@@ -85,3 +87,55 @@
   </aside>
 
 </div>
+
+@if (showCheckoutMessage) {
+
+  <div
+    class="modal-overlay"
+    (click)="showCheckoutMessage = false">
+
+    <div
+      class="thank-you-modal"
+      (click)="$event.stopPropagation()">
+
+      <div class="icon">
+        ✨
+      </div>
+
+      <h2>Thank You for Visiting NOVA</h2>
+
+      <p>
+        This experience was designed as a showcase of modern
+        ecommerce design, animation and frontend engineering.
+      </p>
+
+      <p>
+        Interested in working together or discussing the project?
+        Let's connect.
+      </p>
+
+      <div class="actions">
+
+        <button
+          class="secondary-btn"
+          (click)="showCheckoutMessage = false">
+
+          Continue Exploring
+
+        </button>
+
+        <button
+          class="primary-btn"
+          (click)="goToContact()">
+
+          Contact Me
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+}

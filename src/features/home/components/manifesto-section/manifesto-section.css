@@ -21,10 +21,79 @@
   align-items: center;
 
   text-align: center;
+    position: relative;
+  overflow: hidden;
+
+  --glow: #8B5CF6;
+}
+
+/* ==========================
+   GLOWS
+========================== */
+
+.manifesto-background {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.glow-1 {
+  position: absolute;
+
+  width: 40rem;
+  height: 40rem;
+
+  top: 50%;
+  left: 30%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: var(--glow);
+
+  opacity: .12;
+
+  filter: blur(120px);
+}
+
+.glow-2 {
+  position: absolute;
+
+  width: 25rem;
+  height: 25rem;
+
+  bottom: -5rem;
+  right: 10%;
+
+  border-radius: 50%;
+
+  background: var(--glow);
+
+  opacity: .08;
+
+  filter: blur(100px);
+}
+
+.glow {
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
 }
 
 .manifesto-content {
   max-width: 1100px;
+  position: relative;
+  z-index: 2;
 }
 
 .manifesto p {
@@ -40,6 +109,29 @@
   font-weight: 900;
 
   line-height: 1;
+}
+
+.manifesto-title span {
+  display: inline-block;
+  will-change: transform;
+}
+
+.manifesto-title {
+  text-align: center;
+}
+
+.word {
+  display: inline-block;
+  margin-right: .35em;
+  white-space: nowrap;
+}
+
+.word span {
+  display: inline-block;
+}
+
+.space {
+  width: .4em;
 }
 
 .manifesto-content {

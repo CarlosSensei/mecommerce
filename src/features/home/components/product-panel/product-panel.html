@@ -31,7 +31,9 @@ class="panel product-panel"
                 Add to Cart
                 </button>
 
-                <button class="secondary-btn">
+                <button 
+                    class="secondary-btn"
+                    (click)="openDetails()">
                 Details
                 </button>
 
@@ -49,5 +51,51 @@ class="panel product-panel"
         </div>
 
     </div>
+
+    @if (showDetails) {
+
+        <div
+            class="modal-overlay"
+            (click)="closeDetails()">
+
+            <div
+            class="product-modal"
+            (click)="$event.stopPropagation()">
+
+            <button
+                class="close-btn"
+                (click)="closeDetails()">
+
+                ✕
+
+            </button>
+
+            <img
+                [src]="product.image"
+                [alt]="product.name">
+
+            <h2>{{ product.name }}</h2>
+
+            <p>{{ product.details }}</p>
+
+            <ul>
+                @for(feature of product.features; track feature) {
+                    <li>{{ feature }}</li>
+                }
+            </ul>
+
+            <button
+                class="primary-btn"
+                (click)="addToCart()">
+
+                Add to Cart
+
+            </button>
+
+            </div>
+
+        </div>
+
+    }
 
 </section>
