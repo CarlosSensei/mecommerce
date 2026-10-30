@@ -18,13 +18,13 @@ export class MiniCartComponent {
 
   showCheckoutMessage = false;
 
-checkout(): void {
+  checkout(): void {
 
-  this.cartService.close();
+    this.cartService.close();
 
-  this.showCheckoutMessage = true;
+    this.showCheckoutMessage = true;
 
-}
+  }
 
   goToContact(): void {
 

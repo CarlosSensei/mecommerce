@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FooterComponent } from '../../../../shared/components/footer/footer';
 
 @Component({
@@ -8,4 +8,21 @@ import { FooterComponent } from '../../../../shared/components/footer/footer';
   templateUrl: './cta-section.html',
   styleUrl: './cta-section.css'
 })
-export class CtaSectionComponent {}
+export class CtaSectionComponent {
+
+  @Output()
+  navigate = new EventEmitter<string>();
+
+  goTo(id: string): void {
+    this.navigate.emit(id);
+  }
+
+  goToContact(): void {
+
+    window.open(
+      'https://carlossensei.github.io/Portfolio/',
+      '_blank'
+    );
+  }
+
+}
